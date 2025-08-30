@@ -10,8 +10,7 @@ const PORT = ":6969"
 
 func main() {
 	mux := http.NewServeMux()
-
-  mux.Handle("/", http.FileServer(http.Dir(".")))
+  SetupFileServer(mux)
 
 	server := &http.Server{
 		Addr:         PORT,
